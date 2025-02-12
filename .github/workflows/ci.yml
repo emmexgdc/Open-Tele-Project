@@ -98,3 +98,5 @@ jobs:
                    git commit -m "[CI]: Update deployment image tag" || exit 0
                    git push
               if: github.actor != 'github-actions[bot]'
+
+              
