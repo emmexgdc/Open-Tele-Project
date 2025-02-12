@@ -78,7 +78,7 @@ jobs:
     updatek8s:
         runs-on: ubuntu-latest
 
-        needs: docker
+        needs: [build, docker, code-quality]
 
         steps:
             - name: Checkout code
@@ -95,5 +95,6 @@ jobs:
                    git config --global user.email "emmexgdc@gmail.com"
                    git config --global user.name "emmexgdc"
                    git add kubernetes/productcatalog/deploy.yaml
-                   git commit -m "[CI]: Update deployment image tag"
+                   git commit -m "[CI]: Update deployment image tag" || exit 0
                    git push
+              if: github.actor != 'github-actions[bot]'
