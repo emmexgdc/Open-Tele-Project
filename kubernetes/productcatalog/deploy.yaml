@@ -31,7 +31,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: productcatalogservice
-          image: emmexgdc/product-catalog:13295948852
+          image: emmexgdc/product-catalog:13295977325
           imagePullPolicy: IfNotPresent
           ports:
             
